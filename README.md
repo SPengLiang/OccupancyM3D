@@ -19,7 +19,7 @@ First, please follow the data file generation in [CaDDN](https://github.com/TRAI
 Then, train the model:
 
 ```shell
-cd Occupancy/OpenPCDet/tools
+cd OccupancyM3D/OpenPCDet/tools
 bash scripts/run.sh
 ```
 
