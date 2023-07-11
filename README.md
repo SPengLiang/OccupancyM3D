@@ -2,7 +2,7 @@
 
 <p align="center"> <img src='img/arch.png' align="center" height="300px"> </p>
 
-### Note that this is a initial version, this repository requires to be further cleaned and refactored.
+### Note that this is an initial version, this repository needs to be further cleaned and refactored.
 
 paper link: [[2305.15694] Learning Occupancy for Monocular 3D Object Detection](https://arxiv.org/abs/2305.15694)
 
@@ -14,9 +14,9 @@ Therefore, please follow the installation steps in [OpenPCDet](./OpenPCDet/READM
 
 ## Getting Started
 
-First, please follow the data file generation in [CaDDN](https://github.com/TRAILab/CaDDN/blob/master/docs/GETTING_STARTED.md)
+First, please follow the KITTI data file generation in [CaDDN](https://github.com/TRAILab/CaDDN/blob/master/docs/GETTING_STARTED.md)
 
-Then, train the model:
+Then, train and eval the model:
 
 ```shell
 cd OccupancyM3D/OpenPCDet/tools
