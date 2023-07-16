@@ -16,12 +16,28 @@ Therefore, please follow the installation steps in [OpenPCDet](./OpenPCDet/READM
 
 First, please follow the KITTI data file generation in [CaDDN](https://github.com/TRAILab/CaDDN/blob/master/docs/GETTING_STARTED.md)
 
-Then, train and eval the model:
+We do not use the heavy deeplibV3 backbone. Instead, we use the pre-trained dla34 backbone from [DD3D](https://github.com/TRI-ML/dd3d). Note that the authors slightly modify the model. We re-map the key and provide it at [Google Drive](https://drive.google.com/file/d/1VRUFk0Bwwz60cDrgqbIHXaWubjFCPWKk/view?usp=sharing).
+
+
+Then, train the model:
 
 ```shell
 cd OccupancyM3D/OpenPCDet/tools
-bash scripts/run.sh
+
+CUDA_VISIBLE_DEVICES=0,1,2,3 python -m torch.distributed.launch --rdzv_endpoint=localhost:6400 --nproc_per_node=4  train.py --launcher pytorch  --cfg_file ./cfgs/kitti_models/OccupancyM3D.yaml \
+  --sync_bn --workers 4 \
+  --num_epochs_to_eval 20  \
+  --extra_tag OccupancyM3D
 ```
+
+Eval the model using the pre-trained model:
+```shell
+CUDA_VISIBLE_DEVICES=0 python test.py --cfg_file ./cfgs/kitti_models/OccupancyM3D.yaml \
+  --extra_tag val \
+  --batch_size 2 --workers 4 \
+  --ckpt $pre-trained-model-path
+```
+
 
 ## Pretrained Model
 
