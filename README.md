@@ -14,7 +14,8 @@ Therefore, please follow the installation steps in [OpenPCDet](./OpenPCDet/READM
 
 ## Getting Started
 
-First, please follow the KITTI data file generation in [CaDDN](https://github.com/TRAILab/CaDDN/blob/master/docs/GETTING_STARTED.md)
+First, please follow the KITTI data file generation in [CaDDN](https://github.com/TRAILab/CaDDN/blob/master/docs/GETTING_STARTED.md). You can find "depth_caddn" in [CaDDN](https://drive.google.com/file/d/1qFZux7KC_gJ0UHEg-qGJKqteE9Ivojin/view?usp=sharing), and "lidar_depth" in [Google Drive](https://drive.google.com/file/d/1fR2wKWYtioFOE38xrTXIO1bHKekbfxOI/view?usp=sharing).
+
 
 We do not use the heavy deeplibV3 backbone. Instead, we use the pre-trained dla34 backbone from [DD3D](https://github.com/TRI-ML/dd3d). Note that the authors slightly modify the model. We re-map the key and provide it at [Google Drive](https://drive.google.com/file/d/1VRUFk0Bwwz60cDrgqbIHXaWubjFCPWKk/view?usp=sharing).
 
